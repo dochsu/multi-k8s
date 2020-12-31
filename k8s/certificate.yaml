@@ -11,10 +11,3 @@ spec:
   dnsNames:
     - tetronom.org
     - www.tetronom.org
-  acme:
-    config:
-      - http01:
-          ingressClass: nginx
-        domains:
-          - tetronom.org
-          - www.tetronom.org
