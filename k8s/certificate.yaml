@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha
+kind: Certificate
+metadata:
+  name: tetronom-org-tls
+spec:
+  secretName: tetronom-org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: tetronom.org
+  dnsNames:
+    - tetronom.org
+    - www.tetronom.org
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - tetronom.org
+          - www.tetronom.org
